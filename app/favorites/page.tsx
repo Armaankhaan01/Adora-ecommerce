@@ -1,19 +1,19 @@
 import Container from "@/components/Container";
 import ProductCard from "@/components/ProductCard";
 import SectionTitle from "@/components/SectionTitle";
-import { products } from "@/constants/data";
+import { favoriteItems } from "@/constants/data";
 
-const ShopPage = () => {
+const FavoritesPage = () => {
   return (
     <main className="py-12">
       <Container>
         <SectionTitle
-          eyebrow="Shop"
-          title="Explore all products"
-          description={`Showing ${products.length} products available right now.`}
+          eyebrow="Favorites"
+          title="Saved items"
+          description="Keep track of the styles you love and grab them before they sell out."
         />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {products.map((product) => (
+          {favoriteItems.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
@@ -22,4 +22,4 @@ const ShopPage = () => {
   );
 };
 
-export default ShopPage;
+export default FavoritesPage;
